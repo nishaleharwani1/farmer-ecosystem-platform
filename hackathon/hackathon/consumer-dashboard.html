@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consumer Dashboard | Agro Innovator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <h1>Agro Innovator 🌱</h1>
+        <div class="user-info">
+            <div id="google_translate_element" style="margin-right: 15px;"></div>
+            <script type="text/javascript">
+                function googleTranslateElementInit() {
+                    new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'en,hi,mr,ta,te,gu,bn,kn,ml,pa', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+                }
+            </script>
+            <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+            <span id="userNameDisplay">Consumer</span>
+            <button onclick="logout()" class="logout-btn">Logout</button>
+        </div>
+    </header>
+
+    <main class="dashboard-container">
+        <section class="welcome">
+            <h2>Marketplace</h2>
+            <p>Buy fresh crops directly from farmers with 100% transparency.</p>
+        </section>
+
+        <section class="stats-grid">
+            <div class="stat-card">
+                <h3>My Wallet</h3>
+                <p id="walletBalance">₹0.00</p>
+                <button onclick="addMoney()" class="small-btn">Add ₹1000</button>
+            </div>
+        </section>
+
+        <section class="marketplace">
+            <h3>Available Crops</h3>
+            <div id="cropList" class="crop-grid">
+                <!-- Loaded dynamically -->
+            </div>
+        </section>
+
+        <section class="my-orders">
+            <h3>My Orders</h3>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Crop</th>
+                            <th>Amount</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="ordersTable">
+                        <!-- Loaded dynamically -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Escrow Checkout Modal -->
+        <div id="checkoutModal" class="modal-overlay" style="display: none;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>AgroPay Secure Escrow 🛡️</h3>
+                    <span class="close-modal" onclick="closeCheckout()">×</span>
+                </div>
+                <div class="modal-body">
+                    <p style="margin-bottom: 1rem; color: #64748b; font-size: 0.95rem;">
+                        Your funds are safely locked in Escrow. The farmer will only be paid after the Validator logs successful delivery.
+                    </p>
+                    <div class="receipt">
+                        <div class="receipt-row"><span>Crop Amount:</span> <strong id="checkoutCropAmount">₹0.00</strong></div>
+                        <div class="receipt-row"><span>Logistics & Escrow Fee (2%):</span> <strong id="checkoutFee">₹0.00</strong></div>
+                        <hr>
+                        <div class="receipt-row total"><span>Total Payable:</span> <strong id="checkoutTotal" style="color: #10b981; font-size: 1.3rem;">₹0.00</strong></div>
+                    </div>
+                    <button id="confirmPayBtn" class="buy-btn" style="margin-top: 1.5rem;" onclick="processPayment()">🔒 Pay Securely</button>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="consumer-dashboard.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Validator Dashboard | Agro Innovator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="header">
+    <h1>Agro Innovator 🌱</h1>
+    <div class="user-info">
+        <div id="google_translate_element" style="margin-right: 15px;"></div>
+        <script type="text/javascript">
+            function googleTranslateElementInit() {
+                new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'en,hi,mr,ta,te,gu,bn,kn,ml,pa', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+            }
+        </script>
+        <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+      <span id="userNameDisplay">Validator</span>
+      <button onclick="logout()" class="logout-btn">Logout</button>
+    </div>
+  </header>
+
+  <main class="dashboard-container">
+    <section class="welcome">
+      <h2>Quality Control</h2>
+      <p>Review AI-detected quality and verify crops for the marketplace.</p>
+    </section>
+
+    <section class="pending-crops">
+      <h3>Pending Verification</h3>
+      <div id="cropList" class="crop-grid">
+        <!-- Loaded dynamically -->
+      </div>
+    </section>
+  </main>
+
+  <script src="validator-dashboard.js"></script>
+</body>
+
+</html>

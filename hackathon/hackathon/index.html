@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agro Innovator | Fair Trade Agriculture</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .hero {
+      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 100px 20px;
+      text-align: center;
+    }
+
+    .hero h2 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+
+    .description {
+      padding: 4rem 10%;
+      background: white;
+      text-align: center;
+    }
+
+    .description h3 {
+      color: #1b5e20;
+      margin-bottom: 1rem;
+    }
+
+    .roles {
+      padding: 4rem 5%;
+      background: #f1f8e9;
+    }
+
+    .role-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .role-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="header">
+    <h1>Agro Innovator 🌱</h1>
+    <nav class="user-info">
+      <div id="google_translate_element" style="margin-right: 15px;"></div>
+      <script type="text/javascript">
+          function googleTranslateElementInit() {
+              new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'en,hi,mr,ta,te,gu,bn,kn,ml,pa', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+          }
+      </script>
+      <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+      <a href="index.html" style="color: white; text-decoration: none;">Home</a>
+      <a id="dashboardLink" href="login.html" style="color: white; text-decoration: none; font-weight: bold;">Login /
+        Register</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Direct Farmer to Consumer</h2>
+    <p>AI-Powered Quality Verification • Persistent Blockchain Ledger • Secure Escrow Payments</p>
+  </section>
+
+  <section class="description">
+    <h3>Revolutionizing Agriculture</h3>
+    <p>
+      Agro Innovator connects farmers directly with consumers using cutting-edge technology.
+      Our AI system grades crops instantly, while our persistent blockchain ensures every transaction
+      is immutable and transparent. No more unfair price cuts – just fresh produce and fair pay.
+    </p>
+  </section>
+
+  <section class="roles">
+    <div class="role-grid">
+      <div class="role-card">
+        <div style="font-size: 3rem;">👩‍🌾</div>
+        <h3>Farmers</h3>
+        <p>Upload your harvest, let AI verify quality, and get direct market access with secure payments.</p>
+      </div>
+      <div class="role-card">
+        <div style="font-size: 3rem;">🛒</div>
+        <h3>Consumers</h3>
+        <p>Buy fresh, AI-verified crops with full traceability and direct-from-farm pricing.</p>
+      </div>
+      <div class="role-card">
+        <div style="font-size: 3rem;">🛡️</div>
+        <h3>Validators</h3>
+        <p>Act as trusted agents to verify physical quality and log results to the blockchain.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background: #1b5e20; color: white; text-align: center; padding: 2rem; margin-top: 0;">
+    <p>© 2026 Agro Innovator | Built for a Faster, Fairer Future</p>
+  </footer>
+
+  <script>
+    const link = document.getElementById("dashboardLink");
+    const role = localStorage.getItem("userRole");
+    if (role) {
+      link.innerText = "My Dashboard";
+      if (role === "farmer") link.href = "seller-dashboard.html";
+      else if (role === "consumer") link.href = "consumer-dashboard.html";
+      else if (role === "validator") link.href = "validator-dashboard.html";
+    }
+  </script>
+</body>
+
+</html>

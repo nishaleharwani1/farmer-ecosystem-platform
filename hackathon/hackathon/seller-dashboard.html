@@ -1,0 +1,87 @@
+~<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seller Dashboard | Agro Innovator</title>
+    <link rel="stylesheet" href="seller-dashboard.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+    <h1>Agro Innovator 🌱</h1>
+    <div class="user-info">
+        <div id="google_translate_element" style="margin-right: 15px;"></div>
+        <script type="text/javascript">
+            function googleTranslateElementInit() {
+                new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'en,hi,mr,ta,te,gu,bn,kn,ml,pa', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+            }
+        </script>
+        <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+        <span id="userNameDisplay">Farmer</span>
+        <button onclick="logout()" class="logout-btn">Logout</button>
+    </div>
+</header>
+
+<main class="dashboard-container">
+    <section class="welcome">
+        <h2>Welcome, <span id="welcomeName">Farmer</span>!</h2>
+        <p>Manage your crops and track AI quality checks here.</p>
+    </section>
+
+    <section class="stats-grid">
+        <div class="stat-card">
+            <h3>Wallet Balance</h3>
+            <p id="walletBalance">₹0.00</p>
+        </div>
+        <div class="stat-card">
+            <h3>Listed Crops</h3>
+            <p id="cropCount">0</p>
+        </div>
+    </section>
+
+    <div class="dashboard-grid">
+        <!-- ADD CROP SECTION -->
+        <section class="add-crop-section">
+            <h3>Add New Crop</h3>
+            <form id="addCropForm" class="styled-form">
+                <input type="text" id="cropName" placeholder="Crop Name (e.g. Wheat)" required>
+                <input type="text" id="category" placeholder="Category (e.g. Grains)" required>
+                <input type="number" id="quantity" placeholder="Quantity (kg)" required>
+                <input type="number" id="price" placeholder="Price per kg (₹)" required>
+                <div class="file-input">
+                    <label for="image">Upload Crop Image:</label>
+                    <input type="file" id="image" accept="image/*" required>
+                </div>
+                <button type="submit" id="submitBtn">Check Quality & Upload</button>
+            </form>
+            <div id="aiStatus" class="ai-status"></div>
+        </section>
+
+        <!-- MY CROPS SECTION -->
+        <section class="my-crops-section">
+            <h3>My Warehouse</h3>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Crop</th>
+                            <th>Qty</th>
+                            <th>Price</th>
+                            <th>AI Grade</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="myCropsTable">
+                        <!-- Loaded dynamically -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+</main>
+
+<script src="seller-dashboard.js"></script>
+</body>
+</html>

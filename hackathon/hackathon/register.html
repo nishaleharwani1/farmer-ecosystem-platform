@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register | Agro Innovator</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(135deg, #1b5e20, #43a047);
+    }
+
+    .register-box {
+      background: white;
+      padding: 2.5rem;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      width: 100%;
+      max-width: 450px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #1b5e20;
+      margin-bottom: 2rem;
+    }
+
+    .footer-text {
+      text-align: center;
+      margin-top: 1.5rem;
+      font-size: 0.9rem;
+    }
+
+    .footer-text a {
+      color: #1b5e20;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    select {
+      padding: 0.8rem;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      background: white;
+    }
+  </style>
+</head>
+
+<body>
+  <div style="position: absolute; top: 20px; right: 20px;">
+      <div id="google_translate_element"></div>
+      <script type="text/javascript">
+          function googleTranslateElementInit() {
+              new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'en,hi,mr,ta,te,gu,bn,kn,ml,pa', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+          }
+      </script>
+      <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  </div>
+  <div class="register-box">
+    <h2>Join the Green Revolution 🌱</h2>
+    <form id="registerForm" class="styled-form">
+      <select id="role" required>
+        <option value="" disabled selected>Select Your Role</option>
+        <option value="farmer">Farmer / Home Gardener</option>
+        <option value="consumer">Consumer / Buyer</option>
+        <option value="validator">Quality Validator</option>
+      </select>
+      <input type="text" id="name" placeholder="Full Name" required>
+      <input type="email" id="email" placeholder="Email Address" required>
+      <input type="password" id="password" placeholder="Password" required>
+      <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+      <button type="submit">Create Account</button>
+    </form>
+    <p class="footer-text">
+      Already have an account? <a href="login.html">Login</a>
+    </p>
+  </div>
+
+  <script src="register.js"></script>
+</body>
+
+</html>
